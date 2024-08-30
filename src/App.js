@@ -8,7 +8,6 @@ import react,{ useState } from "react";
 function App() {
 
   const onDelete =(todo)=>{
-    console.log("i am arpan",todo);
     setTodo(todos.filter((e)=>{
       return e!==todo;
     }))
