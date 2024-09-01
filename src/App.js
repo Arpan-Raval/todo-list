@@ -1,7 +1,6 @@
 import './App.css';
 import Header from './MyComponents/Header';
 import { Todos } from './MyComponents/Todos';
-import { TodoItem } from './MyComponents/TodoItem';
 import { Footer } from './MyComponents/Footer';
 import react,{ useState ,useEffect} from "react";
 import { Addtodo } from './MyComponents/Addtodo';
@@ -14,14 +13,12 @@ function App() {
   else{
     initTodo = JSON.parse(localStorage.getItem("todos"));
   }
-
   const onDelete =(todo)=>{
     setTodo(todos.filter((e)=>{
       return e!==todo;
     }));
     localStorage.setItem("todos",JSON.stringify(todos));
   }
-
   const addTodo = (title,desc)=>{
     let number;
     if(todos.length ==0){
@@ -42,7 +39,6 @@ function App() {
   useEffect(() => {
     localStorage.setItem("todos",JSON.stringify(todos));
   }, [todos])
-  
   return (
     <>
     <Header title="To-do-List" searchbar={true}/>
@@ -52,5 +48,4 @@ function App() {
     </>
   );
 }
-
 export default App;
